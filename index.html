@@ -2,12 +2,12 @@
 <html><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f"><link rel="manifest" href="manifest.webmanifest">
-<title>India Intraday Screener PRO V3</title>
+<title>India Intraday Screener PRO V4</title>
 <style>
-body{margin:0;background:#07111f;color:#edf3ff;font:14px system-ui}header{padding:18px;background:#081425;position:sticky;top:0}h1{margin:0;font-size:21px}main{max-width:1100px;margin:auto;padding:12px}.box{background:#0e1a2d;border:1px solid #263853;border-radius:16px;padding:12px;margin:12px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}label{font-size:10px;color:#9eacc2}input,select,button{width:100%;box-sizing:border-box;padding:11px;border-radius:10px;background:#091528;color:#fff;border:1px solid #344965}button{background:#286dcc;font-weight:800}.wide{grid-column:1/-1}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.card{background:#101f34;padding:10px;border-radius:12px}.muted{color:#9eacc2;font-size:11px}.table{overflow:auto}table{width:100%;min-width:900px;border-spacing:0 6px;font-size:11px}td,th{text-align:left;padding:9px}td{background:#0c182b}th{color:#9eacc2}.long{color:#2bd17f}.short{color:#ff6579}.watch{color:#f5c451}.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.plan{background:#0b1729;border:1px solid #263853;border-radius:14px;padding:12px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.metric{background:#101f34;padding:7px;border-radius:8px}.metric small{display:block;color:#91a0b6}.reason{font-size:11px;line-height:1.5;color:#b8c5d8;margin-top:8px}@media(max-width:700px){.plans{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
+body{margin:0;background:#07111f;color:#edf3ff;font:14px system-ui}header{padding:18px;background:#081425;position:sticky;top:0}h1{margin:0;font-size:21px}main{max-width:1100px;margin:auto;padding:12px}.box{background:#0e1a2d;border:1px solid #263853;border-radius:16px;padding:12px;margin:12px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}label{font-size:10px;color:#9eacc2}input,select,button{width:100%;box-sizing:border-box;padding:11px;border-radius:10px;background:#091528;color:#fff;border:1px solid #344965}button{background:#286dcc;font-weight:800}.wide{grid-column:1/-1}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.card{background:#101f34;padding:10px;border-radius:12px}.muted{color:#9eacc2;font-size:11px}.table{overflow:auto}table{width:100%;min-width:900px;border-spacing:0 6px;font-size:11px}td,th{text-align:left;padding:9px}td{background:#0c182b}th{color:#9eacc2}.long{color:#2bd17f}.short{color:#ff6579}.watch{color:#f5c451}.status{padding:9px;border-radius:9px;background:#0b1729}.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.plan{background:#0b1729;border:1px solid #263853;border-radius:14px;padding:12px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.metric{background:#101f34;padding:7px;border-radius:8px}.metric small{display:block;color:#91a0b6}.reason{font-size:11px;line-height:1.5;color:#b8c5d8;margin-top:8px}@media(max-width:700px){.plans{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
 </style></head>
-<body><header><h1>🇮🇳 India Intraday Screener PRO V3</h1><div class="muted">Trade Plan • Entry Zone • SL • T1/T2 • R:R • Reasons • Avoid Rules</div></header>
-<main>
+<body><header><h1>🇮🇳 India Intraday Screener PRO V4</h1><div class="muted">FINAL Safety-First • Market Regime • Dynamic Score • Entry • SL • T1/T2 • Risk/QTY</div></header>
+<main><div class="box"><b>⚠️ V4 Safety Rule</b><div class="muted">Use cash-equity intraday only. Never treat a score as a win probability. Verify every price and order in INDmoney. If V4 says NO TRADE, do not force a trade.</div></div>
 <div class="box"><div class="grid">
 <div><label>Interval</label><select id="int"><option>5m</option><option>15m</option></select></div>
 <div><label>Minimum Score</label><input id="score" type="number" value="80"></div>
@@ -19,10 +19,10 @@ body{margin:0;background:#07111f;color:#edf3ff;font:14px system-ui}header{paddin
 <div><label>Mode</label><select id="mode"><option>Long + Short</option><option>Long only</option><option>Short only</option></select></div>
 <div class="wide"><button onclick="scan()">SCAN MARKET</button></div>
 </div><div id="status" class="muted">Ready. Use during NSE market hours.</div></div>
-<div class="box"><div class="cards" id="kpis"></div></div>
+<div class="box"><div id="market" class="status">Market regime: waiting for scan.</div></div><div class="box"><div class="cards" id="kpis"></div></div>
 <div class="box"><b>Top candidates</b><div class="muted">Score is a rule-based ranking, not a probability of profit.</div>
 <div class="table"><table><thead><tr><th>Stock</th><th>Signal</th><th>Score</th><th>Price</th><th>VWAP</th><th>RSI</th><th>RVOL</th><th>Trend</th><th>Entry Zone</th><th>SL</th><th>T1</th><th>T2</th><th>Qty</th><th>R:R</th></tr></thead><tbody id="rows"></tbody></table></div></div>
-<div class="box"><b>V3 Trade Plans</b><div id="plans" class="plans"></div></div>
+<div class="box"><b>FINAL V4 TRADE PLANS</b><div id="plans" class="plans"></div></div>
 <div class="box muted">Educational tool only. Verify live price, volume, VWAP, entry, stop-loss, target and quantity in INDmoney before placing any order. Public market data can be delayed, unavailable or rate-limited.</div>
 </main>
 <script>
@@ -33,32 +33,35 @@ function RSI(a,p=14){let g=0,l=0;for(let i=a.length-p;i<a.length;i++){let d=a[i]
 function VWAP(b){let v=0,s=0;for(const x of b){let t=(x.h+x.l+x.c)/3;v+=x.v;s+=t*x.v}return s/v}
 function ATR(b){let x=[];for(let i=1;i<b.length;i++)x.push(Math.max(b[i].h-b[i].l,Math.abs(b[i].h-b[i-1].c),Math.abs(b[i].l-b[i-1].c)));return x.slice(-14).reduce((a,b)=>a+b,0)/Math.min(14,x.length)}
 async function bars(sym){let u="https://corsproxy.io/?"+encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${sym}?interval=${$("int").value}&range=${$("int").value==="5m"?"1d":"5d"}&includePrePost=false`);let r=await fetch(u);let q=(await r.json()).chart.result[0],z=q.indicators.quote[0],a=[];for(let i=0;i<q.timestamp.length;i++)if(z.close[i]!=null&&z.volume[i]!=null)a.push({o:z.open[i],h:z.high[i],l:z.low[i],c:z.close[i],v:z.volume[i]});return a}
-function analyze(sym,name,b){
-let c=b.map(x=>x.c),p=c.at(-1),vw=VWAP(b),e20=ema(c,20),e50=ema(c,50),r=RSI(c),a=ATR(b),av=b.slice(-21,-1).reduce((s,x)=>s+x.v,0)/20,rv=b.at(-1).v/av;
-let hi=Math.max(...b.slice(-13,-1).map(x=>x.h)),lo=Math.min(...b.slice(-13,-1).map(x=>x.l)),x=b.at(-1),body=Math.abs(x.c-x.o),rng=Math.max(.001,x.h-x.l);
-let L=0,T=0,RL=[],RT=[],AL=[],AT=[];
-if(p>vw){L+=15;RL.push("Price above VWAP")}else{T+=15;RT.push("Price below VWAP")}
-if(e20>e50){L+=15;RL.push("EMA20 above EMA50")}else{T+=15;RT.push("EMA20 below EMA50")}
-if(r>=55&&r<=70){L+=10;RL.push("RSI bullish")}else if(r<=45&&r>=30){T+=10;RT.push("RSI bearish")}else if(r>70)AL.push("RSI extended above 70");else if(r<30)AT.push("RSI extended below 30");
-if(rv>=+$("rvol").value){L+=15;T+=15;RL.push("Relative volume confirmed");RT.push("Relative volume confirmed")}else{AL.push("Low relative volume");AT.push("Low relative volume")}
-if(p>hi){L+=10;RL.push("Recent-high breakout")}else if(p<lo){T+=10;RT.push("Recent-low breakdown")}else{AL.push("No clean breakout");AT.push("No clean breakdown")}
-if(p>e20)L+=5;else T+=5;
-if(x.c>x.o&&body/rng>.55){L+=10;RL.push("Strong bullish candle")}else if(x.c<x.o&&body/rng>.55){T+=10;RT.push("Strong bearish candle")}
-let sig=L>=T?"LONG":"SHORT",sc=Math.min(100,Math.max(L,T));if(sc<+$("score").value)sig="WATCH";
-if($("mode").value==="Long only"&&sig==="SHORT")sig="WATCH";if($("mode").value==="Short only"&&sig==="LONG")sig="WATCH";
-let risk=Math.max(a*.7,p*.003),sl=sig==="LONG"?p-risk:sig==="SHORT"?p+risk:null,t1=sig==="LONG"?p+2*risk:sig==="SHORT"?p-2*risk:null,t2=sig==="LONG"?p+3*risk:sig==="SHORT"?p-3*risk:null;
-let qty=sig==="WATCH"?0:Math.max(1,Math.floor(+$("risk").value/risk)),rr=2;
-let low=sig==="LONG"?Math.max(vw,p-risk*.35):Math.min(vw,p+risk*.35),high=sig==="LONG"?p+risk*.15:p-risk*.15;
-return {sym,name,p,vw,r,rv,trend:e20>e50?"UP":"DOWN",sig,sc,sl,t1,t2,qty,rr,low,high,risk,loss:qty*risk,why:sig==="LONG"?RL:RT,avoid:sig==="LONG"?AL:AT}
-}
+function ist(){return new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Kolkata"}))}
+function mins(){let d=ist();return d.getHours()*60+d.getMinutes()}
+function marketState(){let m=mins();if(m<540)return ["PRE-OPEN","Wait. Continuous equity trading starts at 09:15 IST; beginner scan starts at 09:20."];if(m<=690)return ["OPEN — PRIMARY WINDOW","Preferred beginner window: 09:20–11:30 IST."];if(m<825)return ["MIDDAY — LOW PRIORITY","Avoid new beginner trades unless exceptionally clear."];if(m<=900)return ["OPEN — SECONDARY WINDOW","Accept only clean, liquid setups; keep risk fixed."];if(m<=930)return ["LATE SESSION","Avoid new beginner entries; manage existing positions only."];return ["MARKET CLOSED","Do not initiate an intraday trade now."]}
+function gate(){let s=marketState();$("status").textContent=s[0]+" • "+s[1]+" • IST "+ist().toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit",second:"2-digit"})}
+setInterval(gate,1000);gate();
+async function bars(sym){let u="https://corsproxy.io/?"+encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${sym}?interval=${$("int").value}&range=${$("int").value==="5m"?"1d":"5d"}&includePrePost=false`);let r=await fetch(u,{cache:"no-store"});if(!r.ok)throw Error("data");let q=(await r.json()).chart.result[0],z=q.indicators.quote[0],a=[];for(let i=0;i<q.timestamp.length;i++)if(z.close[i]!=null&&z.volume[i]!=null)a.push({t:q.timestamp[i]*1000,o:z.open[i],h:z.high[i],l:z.low[i],c:z.close[i],v:z.volume[i]});return a}
+async function indexData(){try{let b=await bars("^NSEI"),c=b.map(x=>x.c);return {p:c.at(-1),vw:VWAP(b),e20:ema(c,20),e50:ema(c,50)}}catch(e){return null}}
+function analyze(sym,name,b,reg){
+let c=b.map(x=>x.c),p=c.at(-1),vw=VWAP(b),e20=ema(c,20),e50=ema(c,50),r=RSI(c),a=ATR(b),av=b.slice(-21,-1).reduce((s,x)=>s+x.v,0)/20,rv=av?b.at(-1).v/av:0;
+let hi=Math.max(...b.slice(-13,-1).map(x=>x.h)),lo=Math.min(...b.slice(-13,-1).map(x=>x.l)),x=b.at(-1),body=Math.abs(x.c-x.o),rng=Math.max(.001,x.h-x.l),L=0,T=0,WL=[],WT=[],AL=[],AT=[];
+if(p>vw){L+=18;WL.push("above VWAP")}else{T+=18;WT.push("below VWAP")}
+if(e20>e50){L+=18;WL.push("EMA20 > EMA50")}else{T+=18;WT.push("EMA20 < EMA50")}
+if(r>=55&&r<=68){L+=12;WL.push("RSI bullish zone")}else if(r>=32&&r<=45){T+=12;WT.push("RSI bearish zone")}else if(r>72){AL.push("RSI extended")}
+if(rv>=+$('rvol').value){L+=16;T+=16;WL.push("RVOL confirmed");WT.push("RVOL confirmed")}else{AL.push("RVOL below threshold");AT.push("RVOL below threshold")}
+if(p>hi){L+=14;WL.push("13-bar breakout")}else if(p<lo){T+=14;WT.push("13-bar breakdown")}else{AL.push("No fresh breakout");AT.push("No fresh breakdown")}
+if(p>e20){L+=5}else{T+=5}
+if(x.c>x.o&&body/rng>.55){L+=10;WL.push("strong bullish candle")}else if(x.c<x.o&&body/rng>.55){T+=10;WT.push("strong bearish candle")}
+if(reg==="BULL"&&p>vw){L+=7;WL.push("NIFTY regime agrees")}else if(reg==="BEAR"&&p<vw){T+=7;WT.push("NIFTY regime agrees")}
+let sig=L>=T?"LONG":"SHORT",score=Math.min(100,Math.max(L,T));
+if($("mode").value==="Long only"&&sig==="SHORT")sig="WATCH";if($("mode").value==="Short only"&&sig==="LONG")sig="WATCH";if(score<+$('score').value)sig="WATCH";
+let rr=+$('rr').value,risk=Math.max(a*.75,p*.0025),sl=sig==="LONG"?p-risk:sig==="SHORT"?p+risk:null,t1=sig==="LONG"?p+risk*rr:sig==="SHORT"?p-risk*rr:null,t2=sig==="LONG"?p+risk*(rr+1):sig==="SHORT"?p-risk*(rr+1):null,qty=sig==="WATCH"?0:Math.max(1,Math.floor(+$('risk').value/risk));
+let low=sig==="LONG"?Math.max(vw,p-risk*.35):sig==="SHORT"?Math.min(vw,p+risk*.35):null,high=sig==="LONG"?p+risk*.15:sig==="SHORT"?p-risk*.15:null;
+return {sym,name,p,vw,r,rv,trend:e20>e50?"UP":"DOWN",sig,score,sl,t1,t2,qty,rr,low,high,risk,loss:qty*risk,why:sig==="LONG"?WL:WT,avoid:sig==="LONG"?AL:AT,last:new Date(x.t).toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit"})}}
 async function scan(){
-$("status").textContent="Scanning 65+ NSE stocks…";let out=[];
-for(let i=0;i<S.length;i++){try{let b=await bars(S[i][0]);if(b.length>50){let x=analyze(S[i][0],S[i][1],b);if(x)out.push(x)}}catch(e){}$("status").textContent=`Scanned ${i+1}/${S.length}`;out.sort((a,b)=>b.sc-a.sc);render(out.slice(0,15))}
-render(out.slice(0,15));$("status").textContent="Scan complete. Verify every setup in INDmoney."
-}
-function render(a){
-$("kpis").innerHTML=[["Scanned",S.length],["Qualified",a.filter(x=>x.sig!="WATCH").length],["Long",a.filter(x=>x.sig=="LONG").length],["Short",a.filter(x=>x.sig=="SHORT").length]].map(x=>`<div class=card><b style="font-size:20px">${x[1]}</b><div class=muted>${x[0]}</div></div>`).join("");
-$("rows").innerHTML=a.map(x=>`<tr><td><b>${x.name}</b><br><span class=muted>${x.sym.replace(".NS","")}</span></td><td class=${x.sig.toLowerCase()}>${x.sig}</td><td><b>${x.sc}</b></td><td>₹${x.p.toFixed(2)}</td><td>₹${x.vw.toFixed(2)}</td><td>${x.r.toFixed(1)}</td><td>${x.rv.toFixed(1)}×</td><td>${x.trend}</td><td>${x.sig=="WATCH"?"-":"₹"+x.low.toFixed(2)+"–₹"+x.high.toFixed(2)}</td><td>${x.sl?.toFixed(2)||"-"}</td><td>${x.t1?.toFixed(2)||"-"}</td><td>${x.t2?.toFixed(2)||"-"}</td><td>${x.qty||"-"}</td><td>${x.sig=="WATCH"?"-":"1:"+x.rr}</td></tr>`).join("");
-$("plans").innerHTML=a.filter(x=>x.sig!="WATCH").map(x=>`<div class=plan><b class=${x.sig.toLowerCase()}>${x.sig=="LONG"?"🟢":"🔴"} ${x.name} — ${x.sig} — ${x.sc}/100</b><div class=metrics><div class=metric><small>Entry zone</small><b>₹${x.low.toFixed(2)}–₹${x.high.toFixed(2)}</b></div><div class=metric><small>SL</small><b>₹${x.sl.toFixed(2)}</b></div><div class=metric><small>Target 1</small><b>₹${x.t1.toFixed(2)}</b></div><div class=metric><small>Target 2</small><b>₹${x.t2.toFixed(2)}</b></div><div class=metric><small>Qty</small><b>${x.qty}</b></div><div class=metric><small>Risk/share</small><b>₹${x.risk.toFixed(2)}</b></div><div class=metric><small>Max loss</small><b>₹${x.loss.toFixed(2)}</b></div><div class=metric><small>R:R</small><b>1:${x.rr}</b></div></div><div class=reason><b>Why:</b> ${x.why.join(" • ")||"Mixed conditions; wait for confirmation."}</div><div class=reason><b>Avoid/invalidate:</b> ${(x.avoid.join(" • ")||"No major rule-based warning.")} • Do not chase beyond the entry zone.</div></div>`).join("")
-}
+let st=marketState();$("status").textContent="Scanning…";let idx=await indexData(),reg="NEUTRAL";
+if(idx){reg=idx.p>idx.vw&&idx.e20>idx.e50?"BULL":idx.p<idx.vw&&idx.e20<idx.e50?"BEAR":"NEUTRAL";$("market").innerHTML=`<b>NIFTY regime: ${reg}</b> • Price ₹${idx.p.toFixed(2)} • VWAP ₹${idx.vw.toFixed(2)} • EMA20 ${idx.e20.toFixed(2)} • EMA50 ${idx.e50.toFixed(2)}<br><span class="muted">Regime is a filter, not a prediction.</span>`}
+let out=[];for(let i=0;i<S.length;i++){try{let b=await bars(S[i][0]);if(b.length>50){let x=analyze(S[i][0],S[i][1],b,reg);if(x&&x.p>=+$('min').value&&x.p<=+$('max').value)out.push(x)}}catch(e){}$("status").textContent=`Scanned ${i+1}/${S.length}`;}
+out.sort((a,b)=>b.score-a.score);render(out.slice(0,15));let q=out.filter(x=>x.sig!=="WATCH");$("status").textContent=`Scan complete • ${S.length} scanned • ${q.length} qualified • Verify every setup in INDmoney.`}
+function render(a){let q=a.filter(x=>x.sig!=="WATCH");$("kpis").innerHTML=[["Scanned",S.length],["Qualified",q.length],["Long",q.filter(x=>x.sig==="LONG").length],["Short",q.filter(x=>x.sig==="SHORT").length]].map(x=>`<div class=card><b style="font-size:20px">${x[1]}</b><div class=muted>${x[0]}</div></div>`).join("");
+$("rows").innerHTML=a.map((x,i)=>`<tr><td><b>#${i+1}</b></td><td><b>${x.name}</b><br><span class=muted>${x.sym.replace(".NS","")}</span></td><td class=${x.sig.toLowerCase()}>${x.sig}</td><td><b>${x.score}</b></td><td>₹${x.p.toFixed(2)}</td><td>₹${x.vw.toFixed(2)}</td><td>${x.r.toFixed(1)}</td><td>${x.rv.toFixed(1)}×</td><td>${x.trend}</td><td>${x.sig==="WATCH"?"-":"₹"+x.low.toFixed(2)+"–₹"+x.high.toFixed(2)}</td><td>${x.sl?.toFixed(2)||"-"}</td><td>${x.t1?.toFixed(2)||"-"}</td><td>${x.t2?.toFixed(2)||"-"}</td><td>${x.qty||"-"}</td><td>${x.sig==="WATCH"?"-":"1:"+x.rr}</td><td>${x.last}</td></tr>`).join("");
+$("plans").innerHTML=q.slice(0,8).map((x,i)=>`<div class=plan><b class=${x.sig.toLowerCase()}>#${i+1} ${x.sig==="LONG"?"🟢":"🔴"} ${x.name} — ${x.sig} — ${x.score}/100</b><div class=metrics><div class=metric><small>Entry zone</small><b>₹${x.low.toFixed(2)}–₹${x.high.toFixed(2)}</b></div><div class=metric><small>SL</small><b>₹${x.sl.toFixed(2)}</b></div><div class=metric><small>Target 1</small><b>₹${x.t1.toFixed(2)}</b></div><div class=metric><small>Target 2</small><b>₹${x.t2.toFixed(2)}</b></div><div class=metric><small>Qty</small><b>${x.qty}</b></div><div class=metric><small>Risk/share</small><b>₹${x.risk.toFixed(2)}</b></div><div class=metric><small>Max loss</small><b>₹${x.loss.toFixed(2)}</b></div><div class=metric><small>R:R</small><b>1:${x.rr}</b></div></div><div class=reason><b>Why:</b> ${x.why.join(" • ")||"Mixed conditions"}</div><div class=reason><b>Avoid / invalidate:</b> ${x.avoid.join(" • ")||"Do not chase outside the entry zone"} • Data bar ${x.last}</div></div>`).join("")||`<div class="status">NO TRADE — no setup passed the V4 rules. Waiting is a valid trading decision.</div>`}
 </script></body></html>

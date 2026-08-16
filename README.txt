@@ -1,8 +1,1 @@
-INDIA INTRADAY SCREENER PRO V3
-- 65+ NSE stocks
-- VWAP, EMA20/50, RSI14, relative volume, breakout, candle confirmation
-- Trade-plan cards: entry zone, SL, T1, T2, quantity, max loss, R:R
-- Why it qualified + avoid/invalidation rules
-- Minimum score, minimum relative volume, minimum R:R, risk per trade
-Replace index.html, manifest.webmanifest and sw.js in your existing GitHub Pages repository. Clear site data/reinstall if Android shows an old cached version.
-Educational tool only. Verify all live values in INDmoney. Scores and trade plans do not guarantee profit.
+FINAL V4: dynamic 0-100 ranking, NIFTY regime, enforced score/RVOL, configurable R:R, risk-based quantity, max loss, market-session gate, data timestamp, entry/SL/T1/T2, reasons and avoid rules. Public data can be delayed; always verify in INDmoney. Cash-equity intraday only; no F&O/options. Suggested first day: scan after 09:20 IST, take at most one trade, fixed ₹200 risk, stop after a loss rather than revenge trade.
