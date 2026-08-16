@@ -1,1 +1,8 @@
-{"name":"India Intraday Screener PRO","short_name":"Intraday Pro","start_url":"./","display":"standalone","background_color":"#07111f","theme_color":"#07111f"}
+{
+  "name": "India Intraday Screener PRO V3",
+  "short_name": "Intraday V3",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f"
+}
