@@ -2,11 +2,11 @@
 <html><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07111f"><link rel="manifest" href="manifest.webmanifest">
-<title>India Intraday Screener PRO V4.1</title>
+<title>India Intraday Screener PRO V4.2</title>
 <style>
-body{margin:0;background:#07111f;color:#edf3ff;font:14px system-ui}header{padding:18px;background:#081425;position:sticky;top:0}h1{margin:0;font-size:21px}main{max-width:1100px;margin:auto;padding:12px}.box{background:#0e1a2d;border:1px solid #263853;border-radius:16px;padding:12px;margin:12px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}label{font-size:10px;color:#9eacc2}input,select,button{width:100%;box-sizing:border-box;padding:11px;border-radius:10px;background:#091528;color:#fff;border:1px solid #344965}button{background:#286dcc;font-weight:800}.wide{grid-column:1/-1}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.card{background:#101f34;padding:10px;border-radius:12px}.muted{color:#9eacc2;font-size:11px}.table{overflow:auto}table{width:100%;min-width:900px;border-spacing:0 6px;font-size:11px}td,th{text-align:left;padding:9px}td{background:#0c182b}th{color:#9eacc2}.long{color:#2bd17f}.short{color:#ff6579}.watch{color:#f5c451}.status{padding:9px;border-radius:9px;background:#0b1729}.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.plan{background:#0b1729;border:1px solid #263853;border-radius:14px;padding:12px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.metric{background:#101f34;padding:7px;border-radius:8px}.metric small{display:block;color:#91a0b6}.reason{font-size:11px;line-height:1.5;color:#b8c5d8;margin-top:8px}@media(max-width:700px){.plans{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
+body{margin:0;background:#07111f;color:#edf3ff;font:14px system-ui}header{padding:18px;background:#081425;position:sticky;top:0}h1{margin:0;font-size:21px}main{max-width:1100px;margin:auto;padding:12px}.box{background:#0e1a2d;border:1px solid #263853;border-radius:16px;padding:12px;margin:12px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}label{font-size:10px;color:#9eacc2}input,select,button{width:100%;box-sizing:border-box;padding:11px;border-radius:10px;background:#091528;color:#fff;border:1px solid #344965}button{background:#286dcc;font-weight:800}.wide{grid-column:1/-1}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.card{background:#101f34;padding:10px;border-radius:12px}.muted{color:#9eacc2;font-size:11px}.table{overflow:auto}table{width:100%;min-width:900px;border-spacing:0 6px;font-size:11px}td,th{text-align:left;padding:9px}td{background:#0c182b}th{color:#9eacc2}.long{color:#2bd17f}.short{color:#ff6579}.watch{color:#f5c451}.status{padding:9px;border-radius:9px;background:#0b1729}.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.plan{background:#0b1729;border:1px solid #263853;border-radius:14px;padding:12px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.metric{background:#101f34;padding:7px;border-radius:8px}.metric small{display:block;color:#91a0b6}.reason{font-size:11px;line-height:1.5;color:#b8c5d8;margin-top:8px}.fail{color:#ff9aa8}.pass{color:#63e6a2}.diag{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:8px}.diag div{background:#101f34;padding:9px;border-radius:9px}@media(max-width:700px){.diag{grid-template-columns:1fr}}@media(max-width:700px){.plans{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
 </style></head>
-<body><header><h1>🇮🇳 India Intraday Screener PRO V4.1</h1><div class="muted">FINAL Safety-First • Market Regime • Dynamic Score • Entry • SL • T1/T2 • Risk/QTY</div></header>
+<body><header><h1>🇮🇳 India Intraday Screener PRO V4.2</h1><div class="muted">Safety-First • Market Regime • Dynamic Score • Trade • Near-Miss • Why No Trade • Risk/QTY</div></header>
 <main><div class="box"><b>⚠️ V4 Safety Rule</b><div class="muted">Use cash-equity intraday only. Never treat a score as a win probability. Verify every price and order in INDmoney. If V4 says NO TRADE, do not force a trade.</div></div>
 <div class="box"><div class="grid">
 <div><label>Interval</label><select id="int"><option>5m</option><option>15m</option></select></div>
@@ -22,7 +22,7 @@ body{margin:0;background:#07111f;color:#edf3ff;font:14px system-ui}header{paddin
 <div class="box"><div id="market" class="status">Market regime: waiting for scan.</div></div><div class="box"><div class="cards" id="kpis"></div></div>
 <div class="box"><b>Top candidates</b><div class="muted">Score is a rule-based ranking, not a probability of profit.</div>
 <div class="table"><table><thead><tr><th>Stock</th><th>Signal</th><th>Score</th><th>Price</th><th>VWAP</th><th>RSI</th><th>RVOL</th><th>Trend</th><th>Entry Zone</th><th>SL</th><th>T1</th><th>T2</th><th>Qty</th><th>R:R</th></tr></thead><tbody id="rows"></tbody></table></div></div>
-<div class="box"><b>FINAL V4 TRADE PLANS</b><div id="plans" class="plans"></div></div>
+<div class="box"><b>🟡 V4.2 NEAR-MISS WATCHLIST</b><div class="muted">These stocks almost qualified. Review why they failed; do not treat them as trade signals.</div><div class="table"><table><thead><tr><th>Stock</th><th>Best Side</th><th>Score</th><th>RVOL</th><th>VWAP</th><th>EMA</th><th>RSI</th><th>Candle</th><th>Breakout</th><th>Failed Rules</th><th>Time</th></tr></thead><tbody id="nearrows"></tbody></table></div></div><div class="box"><b>🔎 WHY NO TRADE?</b><div id="diagnostics" class="muted"></div></div><div class="box"><b>FINAL V4.2 TRADE PLANS</b><div id="plans" class="plans"></div></div>
 <div class="box muted">Educational tool only. Verify live price, volume, VWAP, entry, stop-loss, target and quantity in INDmoney before placing any order. Public market data can be delayed, unavailable or rate-limited.</div>
 </main>
 <script>
@@ -94,34 +94,71 @@ function analyze(sym,name,b,reg){
   if(!Number.isFinite(vw)||!Number.isFinite(atrv)||atrv<=0||!Number.isFinite(r)||!Number.isFinite(rv)||rv<=0) return null;
   const hi=Math.max(...b.slice(-13,-1).map(z=>z.h)),lo=Math.min(...b.slice(-13,-1).map(z=>z.l));
   const L=scoreSide(p,vw,e20,e50,r,rv,atrv,hi,lo,x,reg,'LONG'),T=scoreSide(p,vw,e20,e50,r,rv,atrv,hi,lo,x,reg,'SHORT');
-  let sig=L.score>=T.score?'LONG':'SHORT',score=Math.max(L.score,T.score);
-  if($('mode').value==='Long only'&&sig==='SHORT')sig='WATCH';
-  if($('mode').value==='Short only'&&sig==='LONG')sig='WATCH';
-  if(score<+$('score').value)sig='WATCH';
-  const rr=Math.max(1,+$('rr').value),risk=Math.max(atrv*.75,p*.0025),sl=sig==='LONG'?p-risk:sig==='SHORT'?p+risk:null,t1=sig==='LONG'?p+risk*rr:sig==='SHORT'?p-risk*rr:null,t2=sig==='LONG'?p+risk*(rr+1):sig==='SHORT'?p-risk*(rr+1):null,qty=sig==='WATCH'?0:Math.max(1,Math.floor(+$('risk').value/risk));
-  const low=sig==='LONG'?p-risk*.35:sig==='SHORT'?p+risk*.35:null,high=sig==='LONG'?p+risk*.15:sig==='SHORT'?p-risk*.15:null;
-  return {sym,name,p,vw,r,rv,trend:e20>e50?'UP':'DOWN',sig,score,sl,t1,t2,qty,rr,low,high,risk,loss:qty*risk,why:sig==='LONG'?L.why:T.why,avoid:sig==='LONG'?L.avoid:T.avoid,last:x.t,reg};
+  let side=L.score>=T.score?'LONG':'SHORT',best=side==='LONG'?L:T,score=Math.max(L.score,T.score);
+  const dir=side==='LONG'?1:-1;
+  const vwapPass=dir===1?p>vw:p<vw;
+  const emaPass=dir===1?e20>e50:e20<e50;
+  const rsiExtended=side==='LONG'?r>72:r<28;
+  const rsiPass=!rsiExtended;
+  const rvolPass=rv>=+$('rvol').value;
+  const breakout=side==='LONG'?p>hi:p<lo;
+  const proximity=side==='LONG'?clamp((p-(hi-atrv))/atrv,0,1):clamp(((lo+atrv)-p)/atrv,0,1);
+  const breakoutPass=breakout||proximity>=0.75;
+  const body=Math.abs(x.c-x.o),rng=Math.max(x.h-x.l,.0001),candlePass=(side==='LONG'?x.c>x.o:x.c<x.o)&&body/rng>.55;
+  const regimePass=reg==='NEUTRAL'||(reg==='BULL'&&side==='LONG')||(reg==='BEAR'&&side==='SHORT');
+  const rr=Math.max(1,+$('rr').value),risk=Math.max(atrv*.75,p*.0025);
+  const sl=side==='LONG'?p-risk:p+risk,t1=side==='LONG'?p+risk*rr:p-risk*rr,t2=side==='LONG'?p+risk*(rr+1):p-risk*(rr+1);
+  const rrPass=Number.isFinite(risk)&&risk>0&&rr>=+$('rr').value;
+  const scorePass=score>=+$('score').value;
+  const dataPass=Number.isFinite(vw)&&Number.isFinite(atrv)&&Number.isFinite(r)&&Number.isFinite(rv);
+  const failed=[];
+  if(!scorePass)failed.push('Score');
+  if(!rvolPass)failed.push('RVOL');
+  if(!vwapPass)failed.push('VWAP');
+  if(!emaPass)failed.push('EMA');
+  if(!rsiPass)failed.push('RSI');
+  if(!candlePass)failed.push('Candle');
+  if(!breakoutPass)failed.push('Breakout');
+  if(!regimePass)failed.push('Regime');
+  if(!rrPass)failed.push('R:R');
+  const strict=scorePass&&rvolPass&&vwapPass&&emaPass&&rsiPass&&candlePass&&breakoutPass&&regimePass&&rrPass&&dataPass;
+  const qty=strict?Math.max(1,Math.floor(+$('risk').value/risk)):0;
+  const low=side==='LONG'?p-risk*.35:p+risk*.35,high=side==='LONG'?p+risk*.15:p-risk*.15;
+  let sig=strict?side:'WATCH';
+  if($('mode').value==='Long only'&&side==='SHORT')sig='WATCH';
+  if($('mode').value==='Short only'&&side==='LONG')sig='WATCH';
+  return {sym,name,p,vw,r,rv,trend:e20>e50?'UP':'DOWN',sig,side,score,sl:strict?sl:null,t1:strict?t1:null,t2:strict?t2:null,qty,rr,low:strict?low:null,high:strict?high:null,risk,loss:strict?qty*risk:0,why:best.why,avoid:best.avoid,last:x.t,reg,failed,checks:{scorePass,rvolPass,vwapPass,emaPass,rsiPass,candlePass,breakoutPass,regimePass,rrPass},near:score>=Math.max(60,+$('score').value-15)};
 }
 async function scan(){
-  $('status').textContent='Scanning…';
+  const m=marketState()[0];
+  if(m==='MARKET CLOSED'||m==='PRE-OPEN'){
+    $('status').textContent=m+' • Scan is for observation only outside the active session.';
+  } else $('status').textContent='Scanning…';
   const idx=await indexData(); let reg='NEUTRAL';
   if(idx){
     if(idx.p>idx.e20&&idx.e20>idx.e50)reg='BULL';else if(idx.p<idx.e20&&idx.e20<idx.e50)reg='BEAR';
-    $('market').innerHTML=`<b>NIFTY regime: ${reg}</b> • Price ₹${idx.p.toFixed(2)} • VWAP ${idx.vw==null?'N/A (index volume unavailable)':'₹'+idx.vw.toFixed(2)} • EMA20 ${idx.e20.toFixed(2)} • EMA50 ${idx.e50.toFixed(2)}<br><span class="muted">Regime uses price + EMA trend. NIFTY index VWAP is not used when volume is unavailable.</span>`;
+    $('market').innerHTML=`<b>NIFTY regime: ${reg}</b> • Price ₹${idx.p.toFixed(2)} • VWAP ${idx.vw==null?'N/A (index volume unavailable)':'₹'+idx.vw.toFixed(2)} • EMA20 ${idx.e20.toFixed(2)} • EMA50 ${idx.e50.toFixed(2)}<br><span class="muted">Regime is a filter, not a prediction. Index VWAP is not used when volume is unavailable.</span>`;
   }else $('market').innerHTML='<b>DATA ERROR — NIFTY regime unavailable.</b> Do not use regime-dependent signals.';
   let out=[];
   for(let i=0;i<S.length;i++){
     try{let b=await bars(S[i][0]);let x=analyze(S[i][0],S[i][1],b,reg);if(x&&x.p>=+$('min').value&&x.p<=+$('max').value)out.push(x)}catch(e){}
     $('status').textContent=`Scanned ${i+1}/${S.length}`;
   }
-  out.sort((a,b)=>b.score-a.score);render(out.slice(0,15));const q=out.filter(x=>x.sig!=='WATCH');
+  out.sort((a,b)=>b.score-a.score);
+  render(out.slice(0,15),out);
+  const q=out.filter(x=>x.sig!=='WATCH');
   $('status').textContent=`Scan complete • ${S.length} universe • ${q.length} qualified • Verify every setup in INDmoney.`;
 }
 function fmtTime(t){return new Date(t).toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit'})}
-function render(a){
-  const q=a.filter(x=>x.sig!=='WATCH');
+function render(a,all){
+  const q=all.filter(x=>x.sig!=='WATCH');
   $('kpis').innerHTML=[['Scanned',S.length],['Qualified',q.length],['Long',q.filter(x=>x.sig==='LONG').length],['Short',q.filter(x=>x.sig==='SHORT').length]].map(x=>`<div class=card><b style="font-size:20px">${x[1]}</b><div class=muted>${x[0]}</div></div>`).join('');
-  $('rows').innerHTML=a.map((x,i)=>`<tr><td><b>#${i+1}</b></td><td><b>${x.name}</b><br><span class=muted>${x.sym.replace('.NS','')}</span></td><td class=${x.sig.toLowerCase()}>${x.sig}</td><td><b>${x.score}</b></td><td>₹${x.p.toFixed(2)}</td><td>₹${x.vw.toFixed(2)}</td><td>${x.r.toFixed(1)}</td><td>${x.rv.toFixed(1)}×</td><td>${x.trend}</td><td>${x.sig==='WATCH'?'-':'₹'+x.low.toFixed(2)+'–₹'+x.high.toFixed(2)}</td><td>${x.sl?.toFixed(2)||'-'}</td><td>${x.t1?.toFixed(2)||'-'}</td><td>${x.t2?.toFixed(2)||'-'}</td><td>${x.qty||'-'}</td><td>${x.sig==='WATCH'?'-':'1:'+x.rr}</td><td>${fmtTime(x.last)}</td></tr>`).join('');
-  $('plans').innerHTML=q.slice(0,8).map((x,i)=>`<div class=plan><b class=${x.sig.toLowerCase()}>#${i+1} ${x.sig==='LONG'?'🟢':'🔴'} ${x.name} — ${x.sig} — ${x.score}/100</b><div class=metrics><div class=metric><small>Entry zone</small><b>₹${x.low.toFixed(2)}–₹${x.high.toFixed(2)}</b></div><div class=metric><small>SL</small><b>₹${x.sl.toFixed(2)}</b></div><div class=metric><small>Target 1</small><b>₹${x.t1.toFixed(2)}</b></div><div class=metric><small>Target 2</small><b>₹${x.t2.toFixed(2)}</b></div><div class=metric><small>Qty</small><b>${x.qty}</b></div><div class=metric><small>Risk/share</small><b>₹${x.risk.toFixed(2)}</b></div><div class=metric><small>Max loss</small><b>₹${x.loss.toFixed(2)}</b></div><div class=metric><small>R:R</small><b>1:${x.rr}</b></div></div><div class=reason><b>Why:</b> ${x.why.join(' • ')||'Mixed conditions'}</div><div class=reason><b>Avoid / invalidate:</b> ${x.avoid.join(' • ')||'Do not chase outside the entry zone'} • Data bar ${fmtTime(x.last)}</div></div>`).join('')||`<div class="status">NO TRADE — no setup passed all V4.1 rules. Waiting is a valid trading decision.</div>`;
+  $('rows').innerHTML=a.map((x,i)=>`<tr><td><b>#${i+1}</b><br><b>${x.name}</b><br><span class=muted>${x.sym.replace('.NS','')}</span></td><td class=${x.sig.toLowerCase()}>${x.sig}</td><td><b>${x.score}</b></td><td>₹${x.p.toFixed(2)}</td><td>₹${x.vw.toFixed(2)}</td><td>${x.r.toFixed(1)}</td><td>${x.rv.toFixed(1)}×</td><td>${x.trend}</td><td>${x.sig==='WATCH'?'-':'₹'+x.low.toFixed(2)+'–₹'+x.high.toFixed(2)}</td><td>${x.sl?.toFixed(2)||'-'}</td><td>${x.t1?.toFixed(2)||'-'}</td><td>${x.t2?.toFixed(2)||'-'}</td><td>${x.qty||'-'}</td><td>${x.sig==='WATCH'?'-':'1:'+x.rr}</td><td>${fmtTime(x.last)}</td></tr>`).join('');
+  const near=all.filter(x=>x.sig==='WATCH'&&x.near).slice(0,10);
+  $('nearrows').innerHTML=near.map(x=>`<tr><td><b>${x.name}</b><br><span class=muted>${x.sym.replace('.NS','')}</span></td><td class=${x.side.toLowerCase()}>${x.side}</td><td><b>${x.score}</b></td><td>${x.rv.toFixed(1)}×</td><td class=${x.checks.vwapPass?'pass':'fail'}>${x.checks.vwapPass?'PASS':'FAIL'}</td><td class=${x.checks.emaPass?'pass':'fail'}>${x.checks.emaPass?'PASS':'FAIL'}</td><td class=${x.checks.rsiPass?'pass':'fail'}>${x.r.toFixed(1)}</td><td class=${x.checks.candlePass?'pass':'fail'}>${x.checks.candlePass?'PASS':'FAIL'}</td><td class=${x.checks.breakoutPass?'pass':'fail'}>${x.checks.breakoutPass?'PASS':'FAIL'}</td><td class=fail>${x.failed.join(', ')||'Mode / score gate'}</td><td>${fmtTime(x.last)}</td></tr>`).join('')||`<tr><td colspan="11">No near-miss setups in the current scan.</td></tr>`;
+  const counts={Score:0,RVOL:0,VWAP:0,EMA:0,RSI:0,Candle:0,Breakout:0,Regime:0,'R:R':0,Data:0};
+  all.forEach(x=>x.failed.forEach(f=>counts[f]=(counts[f]||0)+1));
+  $('diagnostics').innerHTML=`<div class="diag"><div><b>${S.length}</b><br><span class=muted>Universe scanned</span></div><div><b>${q.length}</b><br><span class=muted>Strict qualified</span></div><div><b>${counts.Score}</b><br><span class=muted>Failed score</span></div><div><b>${counts.RVOL}</b><br><span class=muted>Failed RVOL</span></div><div><b>${counts.VWAP}</b><br><span class=muted>Failed VWAP</span></div><div><b>${counts.EMA}</b><br><span class=muted>Failed EMA trend</span></div><div><b>${counts.RSI}</b><br><span class=muted>Failed RSI</span></div><div><b>${counts.Candle}</b><br><span class=muted>Failed candle</span></div><div><b>${counts.Breakout}</b><br><span class=muted>Failed breakout/proximity</span></div><div><b>${counts.Regime}</b><br><span class=muted>Failed NIFTY regime</span></div><div><b>${counts['R:R']}</b><br><span class=muted>Failed R:R</span></div></div>`;
+  $('plans').innerHTML=q.slice(0,8).map((x,i)=>`<div class=plan><b class=${x.sig.toLowerCase()}>#${i+1} ${x.sig==='LONG'?'🟢':'🔴'} ${x.name} — ${x.sig} — ${x.score}/100</b><div class=metrics><div class=metric><small>Entry zone</small><b>₹${x.low.toFixed(2)}–₹${x.high.toFixed(2)}</b></div><div class=metric><small>SL</small><b>₹${x.sl.toFixed(2)}</b></div><div class=metric><small>Target 1</small><b>₹${x.t1.toFixed(2)}</b></div><div class=metric><small>Target 2</small><b>₹${x.t2.toFixed(2)}</b></div><div class=metric><small>Qty</small><b>${x.qty}</b></div><div class=metric><small>Risk/share</small><b>₹${x.risk.toFixed(2)}</b></div><div class=metric><small>Max loss</small><b>₹${x.loss.toFixed(2)}</b></div><div class=metric><small>R:R</small><b>1:${x.rr}</b></div></div><div class=reason><b>Why:</b> ${x.why.join(' • ')||'Mixed conditions'}</div><div class=reason><b>Avoid / invalidate:</b> ${x.avoid.join(' • ')||'Do not chase outside the entry zone'} • Data bar ${fmtTime(x.last)}</div></div>`).join('')||`<div class="status">NO TRADE — no setup passed all V4.2 rules. Waiting is a valid trading decision.</div>`;
 }
 </script></body></html>
